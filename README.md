@@ -4,9 +4,22 @@ Basically a place for me to sort out the macros I use. Most of them are borrowed
 For instructions on how to run macros etc. check out [Crymic's Guide](https://gitlab.com/crymic/foundry-vtt-macros/-/blob/8.x/README.md)
 
 
-**File types**
-**.json - ** These are Foundry Items, import these as items
-**.js - ** These are Macros, add them as a macro, details on running them is at the top
+## File types
+
+### .json
+These are Foundry Items, import these as items
+
+### .js
+These are Macros, add them as a macro, details on running them is at the top
+
+
+
+
+
+
+
+
+
 ![Dynamic Active Effects](https://img.shields.io/badge/Dynamic%20Active%20Effects-Required-red)
 ![Midi-Qol](https://img.shields.io/badge/Midi--Qol-Required-red)
 ![Item Macro](https://img.shields.io/badge/Item%20Macro-Recommended-lightgreen)
