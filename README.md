@@ -1,4 +1,4 @@
-# Foundry-VTT-Macros
+# Foundry-VTT-Macros & Items
 Basically a place for me to sort out the macros I use. Most of them are borrowed and adapted and I claim credit for barely any of this code. I'll give credit as I go through hopefully.
 
 ![Dynamic Active Effects](https://img.shields.io/badge/Dynamic%20Active%20Effects-Required-red)
