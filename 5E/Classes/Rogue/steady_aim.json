@@ -1,0 +1,188 @@
+{
+  "name": "Steady Aim",
+  "type": "feat",
+  "img": "icons/skills/ranged/archery-bow-attack-yellow.webp",
+  "data": {
+    "description": {
+      "value": "<div class=\"rd__b  rd__b--1\"><p><i>3rd-level rogue @variantrule[optional class features|tce|optional feature]</i></p><p>As a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn.</p></div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "TCE pg. 62",
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "other",
+    "attackBonus": null,
+    "chatFlavor": "You steady your aim",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "flat"
+    },
+    "requirements": "Rogue 3",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [
+    {
+      "_id": "7HPucx4CGKqWgf7V",
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.attack.all",
+          "mode": 5,
+          "value": "1",
+          "priority": "20"
+        },
+        {
+          "key": "data.attributes.movement.fly",
+          "mode": 5,
+          "value": "0",
+          "priority": "20"
+        },
+        {
+          "key": "data.attributes.movement.swim",
+          "mode": 5,
+          "value": "0",
+          "priority": "20"
+        },
+        {
+          "key": "data.attributes.movement.walk",
+          "mode": 5,
+          "value": "0",
+          "priority": "20"
+        },
+        {
+          "key": "data.attributes.movement.climb",
+          "mode": 5,
+          "value": "0",
+          "priority": "20"
+        },
+        {
+          "key": "data.attributes.movement.burrow",
+          "mode": 5,
+          "value": "0",
+          "priority": "20"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 6,
+        "turns": 1
+      },
+      "icon": "icons/skills/ranged/archery-bow-attack-yellow.webp",
+      "label": "Steady Aim",
+      "origin": "Item.65f6qwQd4bCtikDe",
+      "transfer": false,
+      "flags": {
+        "dae": {
+          "stackable": "none",
+          "macroRepeat": "none",
+          "specialDuration": [
+            "1Attack"
+          ],
+          "transfer": false
+        }
+      },
+      "tint": "",
+      "selectedKey": [
+        "flags.midi-qol.advantage.attack.all",
+        "data.attributes.movement.fly",
+        "data.attributes.movement.swim",
+        "data.attributes.movement.walk",
+        "data.attributes.movement.climb",
+        "data.attributes.movement.burrow"
+      ]
+    }
+  ],
+  "sort": 0,
+  "flags": {
+    "srd5e": {
+      "page": "classfeatures.html",
+      "source": "TCE",
+      "hash": "steady%20aim_rogue_phb_3_tce"
+    },
+    "core": {
+      "sourceId": "Item.65f6qwQd4bCtikDe"
+    },
+    "siftoolkit": {
+      "SIFData": {
+        "ignoreDuration": false,
+        "texture": "",
+        "useTexture": false,
+        "alpha": 50,
+        "coneOrigin": 1,
+        "loopAnimations": true,
+        "playTemplateAudio": false,
+        "playDamageAudio": false,
+        "playSaveAudio": false,
+        "clip": "",
+        "volume": 100
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "",
+      "effectActivation": false
+    },
+    "magicitems": {
+      "enabled": false,
+      "equipped": false,
+      "attuned": false,
+      "charges": "0",
+      "chargeType": "c1",
+      "destroy": false,
+      "destroyFlavorText": "reaches 0 charges: it crumbles into ashes and is destroyed.",
+      "rechargeable": false,
+      "recharge": "0",
+      "rechargeType": "t1",
+      "rechargeUnit": "r1",
+      "sorting": "l"
+    },
+    "exportSource": {
+      "world": "gen2",
+      "system": "dnd5e",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.5.5"
+    }
+  }
+}
