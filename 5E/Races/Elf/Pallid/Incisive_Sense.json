@@ -1,0 +1,151 @@
+{
+  "name": "Incisive Sense",
+  "type": "feat",
+  "img": "icons/league%20of%20legends/abilities/PykeW.png",
+  "data": {
+    "description": {
+      "value": "<div class=\"rd__b  rd__b--3\"><p>You have advantage on Intelligence (<span class=\"help help--hover\" data-plut-hover=\"true\" data-plut-hover-preload=\"true\" data-plut-hover-preload-id=\"166\">Investigation</span>) and Wisdom (<span class=\"help help--hover\" data-plut-hover=\"true\" data-plut-hover-preload=\"true\" data-plut-hover-preload-id=\"167\">Insight</span>) checks.</p><div class=\"rd__spc-inline-post\"></div></div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "EGW",
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": null
+    },
+    "consume": {
+      "type": null,
+      "target": null,
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "other",
+    "attackBonus": null,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "flat"
+    },
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [
+    {
+      "_id": "G6gmupAyLkpvcUNy",
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.skill.ins",
+          "mode": 0,
+          "value": "1",
+          "priority": "20"
+        },
+        {
+          "key": "flags.midi-qol.advantage.skill.inv",
+          "mode": 0,
+          "value": "1",
+          "priority": "20"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null
+      },
+      "icon": "icons/league%20of%20legends/abilities/PykeW.png",
+      "label": "Incisive Sense (Adv Ins, Inv)",
+      "origin": "Item.0z5UbrcoRlv8P3xT",
+      "transfer": true,
+      "flags": {
+        "dae": {
+          "stackable": "none",
+          "macroRepeat": "none",
+          "specialDuration": [],
+          "transfer": true
+        }
+      },
+      "tint": null,
+      "selectedKey": [
+        "StatusEffect",
+        "StatusEffect"
+      ]
+    }
+  ],
+  "sort": 0,
+  "flags": {
+    "core": {
+      "sourceId": "Item.0z5UbrcoRlv8P3xT"
+    },
+    "siftoolkit": {
+      "SIFData": {
+        "ignoreDuration": false,
+        "texture": "",
+        "useTexture": false,
+        "alpha": 50,
+        "coneOrigin": 1,
+        "loopAnimations": true,
+        "playTemplateAudio": false,
+        "playDamageAudio": false,
+        "playSaveAudio": false,
+        "clip": "",
+        "volume": 100
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "",
+      "effectActivation": false
+    },
+    "magicitems": {
+      "enabled": false,
+      "equipped": false,
+      "attuned": false,
+      "charges": "0",
+      "chargeType": "c1",
+      "destroy": false,
+      "destroyFlavorText": "reaches 0 charges: it crumbles into ashes and is destroyed.",
+      "rechargeable": false,
+      "recharge": "0",
+      "rechargeType": "t1",
+      "rechargeUnit": "r1",
+      "sorting": "l"
+    },
+    "exportSource": {
+      "world": "gen2",
+      "system": "dnd5e",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.5.5"
+    }
+  }
+}
