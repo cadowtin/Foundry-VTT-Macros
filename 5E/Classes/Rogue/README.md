@@ -1,6 +1,6 @@
 # Rogue
 
-### auto_sneak_attack_with_animation.json
+### Auto_Sneak_Attack_with_Animation.json
 _Requires: MidiQol, Item Macros, DaE, JB2A_
 
 Used autosneak attack macro by **crymic**, but added animations from **JB2A** to it
