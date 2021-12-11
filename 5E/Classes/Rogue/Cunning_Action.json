@@ -1,0 +1,139 @@
+{
+  "name": "Cunning Action",
+  "type": "feat",
+  "img": "icons/magic/control/hypnosis-mesmerism-watch.webp",
+  "data": {
+    "description": {
+      "value": "<div class=\"rd__b  rd__b--3\"><p>Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the @action[Dash], @action[Disengage], or @action[Hide] action.</p><div class=\"rd__spc-inline-post\"></div></div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 94",
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "type": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "requirements": "Rogue 2",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "srd5e": {
+      "page": "classfeatures.html",
+      "source": "PHB",
+      "hash": "cunning%20action_rogue_phb_2_phb"
+    },
+    "siftoolkit": {
+      "SIFData": {
+        "ignoreDuration": false,
+        "texture": "",
+        "useTexture": false,
+        "alpha": 50,
+        "coneOrigin": 1,
+        "loopAnimations": true,
+        "playTemplateAudio": false,
+        "playDamageAudio": false,
+        "playSaveAudio": false,
+        "clip": "",
+        "volume": 100
+      }
+    },
+    "magicitems": {
+      "enabled": false,
+      "equipped": false,
+      "attuned": false,
+      "charges": "0",
+      "chargeType": "c1",
+      "destroy": false,
+      "destroyFlavorText": "reaches 0 charges: it crumbles into ashes and is destroyed.",
+      "rechargeable": false,
+      "recharge": "0",
+      "rechargeType": "t1",
+      "rechargeUnit": "r1",
+      "sorting": "l"
+    },
+    "midi-qol": {
+      "onUseMacroName": "ItemMacro",
+      "effectActivation": false
+    },
+    "itemacro": {
+      "macro": {
+        "data": {
+          "_id": null,
+          "name": "Cunning Action",
+          "type": "script",
+          "author": "5lfU7GsN4E3hdWkG",
+          "img": "icons/svg/dice-target.svg",
+          "scope": "global",
+          "command": "// You can do a short cut version\nconst a = canvas.tokens.controlled[0]?.actor || game.user.character;\nlet the_message = `<em>${actor.name} acts cunningly.</em>`;\n\n         \n\nnew Dialog({\n\ttitle: `Cunning Action`,\n\tcontent: `<p>Select an action type Dash, Disengage, or Hide action.</p>`,\n\tbuttons: {\n\t\tone: {label: \"Dash\", callback: () => {\n            // do stuff here\nconst actorD = game.actors.get(args[0].actor._id);\nconst effectData = [{\n        changes: [\n            { key: \"data.attributes.movement.walk\", mode: 1, value: 2, priority: 20 },\n        ],\n        origin: args[0].uuid,\n        disabled: false,\n        duration: { turns: 1, startTime: game.time.worldTime },\n        icon: \"data.attributes.movement.walk\",\n        label: `Dashing`\n    }]\n    actorD.createEmbeddedDocuments(\"ActiveEffect\", effectData);\n                the_message = `<em>${actor.name} decides to @action[Dash].</em>`;\nChatMessage.create({\n            user: game.user._id,\n            speaker: ChatMessage.getSpeaker({token: a}),\n            content: the_message,\n            type: CONST.CHAT_MESSAGE_TYPES.EMOTE\n         });\n        }},\n\t\ttwo: {label: \"Disengage\", callback: () => {\n            the_message = `<em>${actor.name} decides to @action[Disengage].</em>`;\nChatMessage.create({\n            user: game.user._id,\n            speaker: ChatMessage.getSpeaker({token: a}),\n            content: the_message,\n            type: CONST.CHAT_MESSAGE_TYPES.EMOTE\n         });\n        }},\n\t\tthree: {label: \"Hide\", callback: () => {\n            actor.rollSkill('ste');\n            the_message = `<em>${actor.name} decides to @action[Hide].</em>`;\nChatMessage.create({\n            user: game.user._id,\n            speaker: ChatMessage.getSpeaker({token: a}),\n            content: the_message,\n            type: CONST.CHAT_MESSAGE_TYPES.EMOTE\n         });\n        }}\n\t},\n    default: \"one\"\n}).render(true);",
+          "folder": null,
+          "sort": 0,
+          "permission": {
+            "default": 0
+          },
+          "flags": {}
+        }
+      }
+    },
+    "core": {
+      "sourceId": "Item.WPjSJL5hGCricYex"
+    },
+    "exportSource": {
+      "world": "gen2",
+      "system": "dnd5e",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.5.5"
+    }
+  }
+}
