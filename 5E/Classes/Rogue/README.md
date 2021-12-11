@@ -8,7 +8,7 @@ Used autosneak attack macro by **crymic**, but added animations from **JB2A** to
 ### Cunning Action.json
 _Requires: MidiQol, Item Macros, DaE_
 
-Has a popup to pick between which cunning action to use. Writes a message out to chat for which one picked. For Dash applies an effect to the character that doubles *walking* speed. For Hide, has the character roll stealth.
+Has a popup to pick between which cunning action to use. Writes a message out to chat for which one picked. For Dash applies an effect to the character that doubles *walking* speed. For Hide, has the character roll stealth *works well with conditional visibility*.
 
 ### Steady_Aim.json
 _Requires: MidiQol and DAE_
