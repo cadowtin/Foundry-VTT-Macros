@@ -1,0 +1,212 @@
+{
+  "name": "Starry Form: Chalice",
+  "type": "feat",
+  "img": "icons/containers/kitchenware/goblet-handle-gold.webp",
+  "data": {
+    "description": {
+      "value": "<div class=\"rd__b  rd__b--1\">\n<p><em>2nd-level Circle of the Stars feature</em></p>\n<p>As a bonus action, you can expend a use of your Wild Shape feature to take on a starry form, rather than transforming into a beast.</p>\n<p>While in your starry form, you retain your game statistics, but your body becomes luminous; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are @condition[incapacitated], die, or use this feature again.</p>\n<p>Whenever you assume your starry form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:</p>\n<div class=\"rd__b  rd__b--2\">\n<div class=\"rd__b  rd__b--2\"><span class=\"rd__h rd__h--2\" data-title-index=\"40\"><span class=\"entry-title-inner\">Chalice</span><span class=\"ve-flex-vh-center\"><span class=\"rd__h-toggle ml-2 clickable\" data-rd-h-toggle-button=\"true\">[&ndash;]</span></span></span>\n<p>A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to [[/r 1d8]] + your Wisdom modifier.</p>\n</div>\n</div>\n</div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "TCE pg. 38",
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute"
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": ""
+    },
+    "consume": {
+      "type": "charges",
+      "target": "",
+      "amount": 1
+    },
+    "ability": "",
+    "actionType": "other",
+    "attackBonus": null,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "1d8",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "flat"
+    },
+    "requirements": "Druid 2 (Stars)",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [
+    {
+      "_id": "2JJP02E1fB0blVTX",
+      "changes": [
+        {
+          "key": "ATL.light.dim",
+          "mode": 5,
+          "value": "20",
+          "priority": "20"
+        },
+        {
+          "key": "ATL.light.bright",
+          "mode": 5,
+          "value": "10",
+          "priority": "20"
+        },
+        {
+          "key": "ATL.light.alpha",
+          "mode": 5,
+          "value": "0.3",
+          "priority": "20"
+        },
+        {
+          "key": "ATL.light.color",
+          "mode": 5,
+          "value": "#1ce8d0",
+          "priority": "20"
+        },
+        {
+          "key": "macro.itemMacro",
+          "mode": 0,
+          "value": "@token @item",
+          "priority": "20"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600
+      },
+      "icon": "icons/magic/light/projectile-stars-blue.webp",
+      "label": "Starry Form",
+      "origin": "Item.ZGSFX6W7FcIB3VNo",
+      "transfer": false,
+      "flags": {
+        "core": {
+          "statusId": ""
+        },
+        "dae": {
+          "stackable": "none",
+          "durationExpression": "",
+          "macroRepeat": "none",
+          "specialDuration": [],
+          "transfer": false
+        },
+        "ActiveAuras": {
+          "isAura": false,
+          "aura": "None",
+          "radius": null,
+          "alignment": "",
+          "type": "",
+          "ignoreSelf": false,
+          "height": false,
+          "hidden": false,
+          "displayTemp": false,
+          "hostile": false,
+          "onlyOnce": false
+        }
+      },
+      "tint": "",
+      "selectedKey": [
+        "ATL.light.dim",
+        "ATL.light.bright",
+        "ATL.light.alpha",
+        "ATL.light.color",
+        "macro.itemMacro"
+      ]
+    }
+  ],
+  "flags": {
+    "srd5e": {
+      "page": "classfeatures.html",
+      "source": "TCE",
+      "hash": "starry%20form_druid_phb_stars_tce_2_tce"
+    },
+    "siftoolkit": {
+      "SIFData": {
+        "ignoreDuration": false,
+        "texture": "",
+        "useTexture": false,
+        "alpha": 50,
+        "coneOrigin": 1,
+        "loopAnimations": true,
+        "playTemplateAudio": false,
+        "playDamageAudio": false,
+        "playSaveAudio": false,
+        "clip": "",
+        "volume": 100
+      }
+    },
+    "midi-qol": {
+      "effectActivation": false
+    },
+    "magicitems": {
+      "enabled": false,
+      "equipped": false,
+      "attuned": false,
+      "charges": "0",
+      "chargeType": "c1",
+      "destroy": false,
+      "destroyFlavorText": "reaches 0 charges: it crumbles into ashes and is destroyed.",
+      "rechargeable": false,
+      "recharge": "0",
+      "rechargeType": "t1",
+      "rechargeUnit": "r1",
+      "sorting": "l"
+    },
+    "core": {
+      "sourceId": "Item.7q5PSnlHM88c1kEV"
+    },
+    "itemacro": {
+      "macro": {
+        "data": {
+          "_id": null,
+          "name": "Starry Form: Chalice",
+          "type": "script",
+          "author": "5lfU7GsN4E3hdWkG",
+          "img": "icons/svg/dice-target.svg",
+          "scope": "global",
+          "command": "// IN DAE > Set the stackable to \"Stacking effects apply the effect multiple times\"\nasync function wait(ms) { return new Promise(resolve => { setTimeout(resolve, ms); }); }\nconst lastArg = args[args.length - 1];\nlet tactor;\nif (lastArg.tokenId) tactor = canvas.tokens.get(lastArg.tokenId).actor;\nelse tactor = game.actors.get(lastArg.actorId);\nconst itemD = lastArg.efData.flags.dae.itemData;\n\nif(args[0] === \"on\"){\n    let itemData = [{\n  \"name\": \"Starry Chalice Heal\",\n  \"type\": \"feat\",\n  \"img\": \"icons/magic/life/cross-explosion-burst-green.webp\",\n  \"data\": {\n    \"description\": {\n      \"value\": \"<p>A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to [[/r 1d8]] + your Wisdom modifier.</p>\"\n    },    \n    \"identified\": true,\n    \"activation\": {\n      \"type\": \"special\",\n      \"cost\": 0,\n      \"condition\": \"\"\n    },\n    \"target\": {\n      \"value\": 1,\n      \"width\": null,\n      \"units\": \"\",\n      \"type\": \"creature\"\n    },    \n    \"range\": {\n      \"value\": 30,\n      \"long\": null,\n      \"units\": \"ft\"\n    },\n    \"uses\": {\n      \"value\": null,\n      \"max\": \"\",\n      \"per\": \"\"\n    },\n    \"ability\": \"wis\",\n    \"actionType\": \"heal\",\n    \"damage\": {\n      \"parts\": [\n        [\n          \"1d8 + @abilities.wis.mod\",\n          \"healing\"\n        ]\n      ],\n      \"versatile\": \"\"\n    }\n  }\n}];\n    await tactor.createEmbeddedDocuments(\"Item\", itemData);\n}\nif (args[0] === \"off\") {\n    let itemz = tactor.data.items.find(i => i.name === \"Starry Chalice Heal\");\nconsole.log(itemD);\nconsole.log(itemz);\n    if (itemz) await tactor.deleteEmbeddedDocuments('Item', [itemz.id]);\n}",
+          "folder": null,
+          "sort": 0,
+          "permission": {
+            "default": 0
+          },
+          "flags": {}
+        }
+      }
+    },
+    "exportSource": {
+      "world": "pirates",
+      "system": "dnd5e",
+      "coreVersion": "9.249",
+      "systemVersion": "1.5.7"
+    }
+  }
+}
