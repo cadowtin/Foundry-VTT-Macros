@@ -1,0 +1,156 @@
+{
+  "name": "Focused_Aim",
+  "type": "feat",
+  "img": "icons/skills/targeting/target-strike-triple-blue.webp",
+  "data": {
+    "description": {
+      "value": "<div class=\"rd__b  rd__b--1\"><p><i>5th-level monk @variantrule[optional class features|tce|optional feature]</i></p><p>When you miss with an attack roll, you can spend 1 to 3 ki points to increase your attack roll by 2 for each of these ki points you spend, potentially turning the miss into a hit.</p></div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "TCE pg. 48 pg. 48",
+    "activation": {
+      "type": "none",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": ""
+    },
+    "consume": {
+      "type": "attribute",
+      "target": "",
+      "amount": 1
+    },
+    "ability": "",
+    "actionType": "",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "flat"
+    },
+    "requirements": "Monk 5",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "attunement": null
+  },
+  "effects": [],
+  "flags": {
+    "srd5e": {
+      "page": "classfeatures.html",
+      "source": "TCE",
+      "hash": "focused%20aim_monk_phb_5_tce"
+    },
+    "dnd5e": {
+      "advancementOrigin": "mfYVCkDaDAWK9MvY.wlrxxkct7arf153z"
+    },
+    "siftoolkit": {
+      "SIFData": {
+        "ignoreDuration": false,
+        "texture": "",
+        "useTexture": false,
+        "alpha": 50,
+        "coneOrigin": 1,
+        "loopAnimations": true,
+        "playTemplateAudio": false,
+        "playDamageAudio": false,
+        "playSaveAudio": false,
+        "clip": "",
+        "volume": 100
+      }
+    },
+    "rest-recovery": {
+      "data": {
+        "recovery": {
+          "enabled": false
+        }
+      }
+    },
+    "midi-qol": {
+      "effectActivation": false
+    },
+    "midiProperties": {
+      "nodam": false,
+      "fulldam": false,
+      "halfdam": false,
+      "rollOther": false,
+      "critOther": false,
+      "magicdam": false,
+      "magiceffect": false,
+      "concentration": false,
+      "toggleEffect": false
+    },
+    "magicitems": {
+      "enabled": false,
+      "equipped": false,
+      "attuned": false,
+      "charges": "0",
+      "chargeType": "c1",
+      "destroy": false,
+      "destroyFlavorText": "reaches 0 charges: it crumbles into ashes and is destroyed.",
+      "rechargeable": false,
+      "recharge": "0",
+      "rechargeType": "t1",
+      "rechargeUnit": "r1",
+      "sorting": "l"
+    },
+    "core": {
+      "sourceId": "Item.Z8oppBSROgouHUoS"
+    },
+    "itemacro": {
+      "macro": {
+        "data": {
+          "_id": null,
+          "name": "Focused_Aim",
+          "type": "script",
+          "author": "LHPiRznHA2PjSFH2",
+          "img": "icons/svg/dice-target.svg",
+          "scope": "global",
+          "command": "const workflow = MidiQOL.Workflow.getWorkflow(args[0].uuid);\nconst ac = args[0].targets[0].actor.data.data.attributes.ac.value;\nconst roll = workflow.attackTotal;\nif (workflow.isFumble || !args[0].targets.length || roll >= ac) return {};\nconst tokD = canvas.tokens.get(args[0].tokenId);\nconst actD = tokD.actor;\nconst ki_item = actD.items.getName(\"Ki\");\nconst ki_cnt = ki_item.data.data.uses.value;\n\nif (ki_cnt === 0) return {};\n\nif (roll < ac) { //&& (roll + 3 >= ac)) {\n\n    let option = \"\";\n    const z = {};\n    if (ki_cnt >= 1)\n        z.one = {\n            label: \"1 Ki: +2\",\n            callback: () => {\n                option = 1;\n                bonus = 2;\n            }\n        };\n    if (ki_cnt >= 2)\n        z.two = {\n            label: \"2 Ki: +4\",\n            callback: () => {\n                option = 2;\n                bonus = 4;\n            }\n        };\n    if (ki_cnt >= 3)\n        z.three = {\n            label: \"3 Ki: +6\",\n            callback: () => {\n                option = 3;\n                bonus = 6;\n            }\n        };\n    z.cancel = {\n        label: \"Cancel\",\n        callback: () => {\n            option = 0;\n        }\n    };\n\n\n    let bonus = 0;\n    ChatMessage.create({\n        whisper: ChatMessage.getWhisperRecipients(\"GM\"),\n        user: game.user.id,\n        speaker: ChatMessage.getSpeaker(),\n        content: `${actD.data.name} considers using ki to focusing their aim`\n    })\n    let dialog = new Promise((resolve, reject) => {\n      new Dialog({\n        title: `Focused Aim`,\n        content: `<p><i>When you miss with an attack roll, you can spend 1 to 3 ki points to increase your attack roll by 2 for each of these ki points you spend, potentially turning the miss into a hit.</i></p>\n        \n        <p>Your attack roll is currently <b>${roll}</b> and you have <b>${ki_cnt}/${ki_item.data.data.uses.max}</b> ki remaining.</p>`,\n        buttons: z,\n        default: \"cancel\",\n        close: (html) => {\n            if (!option) {resolve(false)\n                return {}\n            }resolve(true);\n            // other things happen\n        }\n    }).render(true);\n    })\n\n    useFA = await dialog;\n    if (!useFA) return {};\n    ChatMessage.create({\n        whisper: ChatMessage.getWhisperRecipients(\"GM\"),\n        user: game.user.id,\n        speaker: ChatMessage.getSpeaker(),\n        content: `${actD.data.name} uses ${(bonus / 2)} ki to give +${bonus} to their attack`\n    })\n    workflow.attackRoll = await new Roll(workflow.attackRoll.result + ` + ${bonus}[Focused Aim]`).roll();\n    workflow.attackTotal = workflow.attackRoll.total;\n    workflow.attackRollHTML = await workflow.attackRoll.render();\n    await actD.items.getName(\"Ki\").update({\n        'data.uses.value': ki_cnt - (bonus / 2)\n    });\n    \n}",
+          "folder": null,
+          "sort": 0,
+          "permission": {
+            "default": 0
+          },
+          "flags": {}
+        }
+      }
+    },
+    "exportSource": {
+      "world": "test-potato-pc",
+      "system": "dnd5e",
+      "coreVersion": "9.269",
+      "systemVersion": "1.6.3"
+    }
+  }
+}
